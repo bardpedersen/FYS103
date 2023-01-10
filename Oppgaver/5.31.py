@@ -68,8 +68,7 @@ print('Expected standard deviation is the same as sigma = 7.04/sqrt(4) = 3.52.\n
 
 # c)
 bins = np.linspace(55.1, 90.7, 11)
-print(bins)
 plt.hist(list_number, bins=bins, histtype='step', edgecolor='green', linewidth=1)
 plt.hist(list_of_mean*4, bins=bins, histtype='step', edgecolor='red', linewidth=1)
 plt.axvline(72.9, color='k', linestyle='dashed', linewidth=1.2)
-plt.imshow()
+plt.show()
