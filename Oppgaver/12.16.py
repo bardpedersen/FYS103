@@ -23,6 +23,8 @@ for number, i in enumerate(list_of_nu):
     list_to_ans.append((poisson(my, i)*100))
 
 list_to_ans.append(100-sum(list_to_ans))
+for i, number in enumerate(list_to_ans):
+    list_to_ans[i] = number/100*40
 print('a) values expected:', list_to_ans)
 
 
@@ -33,6 +35,8 @@ for number, i in enumerate(list_of_nu):
     list_to_ans.append((poisson(my, i)*100))
 
 list_to_ans.append(100-sum(list_to_ans))
+for i, number in enumerate(list_to_ans):
+    list_to_ans[i] = number/100*40
 list_ans = [11, 12, 11, 6]
 result = chi_square(list_ans, list_to_ans)
 print('b) ', 'x^2: ', result, 'd: ', 3, 'x_tilde: ', result/3)
@@ -45,6 +49,8 @@ for number, i in enumerate(list_of_nu):
     list_to_ans.append((poisson(my, i)*100))
 
 list_to_ans.append(100-sum(list_to_ans))
+for i, number in enumerate(list_to_ans):
+    list_to_ans[i] = number/100*40
 list_ans = [11, 12, 11, 6]
 result = chi_square(list_ans, list_to_ans)
 print('c) ', 'x^2: ', result, 'd: ', 3, 'x_tilde: ', result/3)
