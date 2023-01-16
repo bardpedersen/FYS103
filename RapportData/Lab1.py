@@ -184,7 +184,7 @@ if __name__ == '__main__':
     print('x_squared =', x_squared)
 
     # Define number of degrees of freedom
-    df = 7
+    df = 6
 
     # Calculate chi-squared tilde
     x_tilde = x_squared / df
@@ -201,11 +201,13 @@ if __name__ == '__main__':
     plt.ylabel('Antall ganger observert')
     plt.title('Antall målte desintegrasjoner bakgrunnstråling')
     plt.legend(loc='lower center')
+    plt.savefig('Background_radiation.jpg')
     plt.show()
 
     print('-------------------')
     print('Målinger med strålekilden\n')
     print('Middelverdi =', my1, 'Standaravvik =', sd_norm1, 'Standaravik poisson =', sd_pos1)
+    print('Standar feil =', sd_mid1)
 
     # Turn number of observation to dictionary with frequency of occurrence
     number_freq_observed1 = list_to_dict(list_number_tot)
@@ -238,6 +240,7 @@ if __name__ == '__main__':
     plt.xlabel('Antall desintegrasjoner')
     plt.ylabel('Antall ganger observert')
     plt.legend(loc='lower center')
+    plt.savefig('Total_radiation.jpg')
     plt.show()
 
     print('-------------------')
