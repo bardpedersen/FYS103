@@ -1,0 +1,89 @@
+\documentclass[onecolumn, 11pt]{article} % MÅ defineres i ethvert dokument.
+\usepackage{longtable}
+
+\usepackage[utf8]{inputenc} %Tillater spesialteikn uten bruk av koding.
+\usepackage[norsk]{babel} % Tillater norske teikn.
+\usepackage[margin=1in]{geometry} % Definerer marger i dokumentet.
+\usepackage{microtype} % Gjør det mer behagelig å lese dokumentet.
+\usepackage{amsmath} % Tillater avansert formatering av matte.
+\usepackage{amsfonts} % Tillater avanserte teikn, som R for reelle tall.
+\usepackage[toc,page]{appendix} 
+\usepackage{url}
+\usepackage{graphicx} % Tillater mer avansert formatering av grafikk.
+\usepackage{geometry} % Tillater enklere formatering av sidevisning.
+\usepackage[colorlinks=true, pdfborder={0 0 0}]{hyperref} % Tillater hyperlenker {\href} som under. Colorlinks kan byttes til false hvis man ønsker linker i svart.
+\usepackage[tableposition=top]{caption} % Tvinger tabelltekst til å dukke opp over alle tabeller.
+
+
+\begin{document}
+\title{Spørsmål gruppe 33}
+\maketitle
+
+\textit{Question 1 What does a scatter plot show? What can we use it for?}
+
+Et spredningsplott er et plott av to variabler som viser hvordan de varierer i forhold til hverandre. Dette kan blant annet brukes til å identifisere mønstre og relasjoner i dataene.
+
+\bigskip
+
+\textit{Question 2 Why is it difficult to get an overview over high-dimensional data such as spectroscopy
+data by a scatter plot of variables?}
+
+Høydimensjonale data kan være vanskelig å få oversikt over med spredningsplott fordi det ikke er mulig å plotte mer enn tre variabler om gangen. Etter hvert som antallet variabler øker, kan det også bli vanskelig å oppdage mønstre i dataene.
+
+\bigskip
+
+\textit{Question 3 What is maximized by the first principal component?}
+
+Den første hovedkomponenten maksimerer variansen til dataene, noe som betyr at den fanger opp mest variasjon eller spredning i dataene.
+
+\bigskip
+
+\textit{Question 4 The principal components are represented by loading vectors in the space of variables.
+Loading vectors point in the direction of the variables that contribute most to a given principal
+component. Can you write down approximately the loading vector in vector notation for the loading
+shown in the presentation? What does it mean that some of the numbers are higher than the others?}
+
+
+vektor = [0.85$x_1$ + 0.35$x_2$ + 0.35$x_3$ -0.08$x_4$ ] der $x_1$ = Petal length, $x_2$ = Petal width, $x_3$ = Sepal length, $x_4$ = Sepal width
+
+Når noen av tallene i vektoren er høyere enn de andre, betyr det at den tilsvarende variabelen har et større bidrag til hovedkomponenten enn de andre variablene.
+
+\bigskip
+
+\textit{Question 5 How can the loading vectors be used to connect patterns in score plots to the variables
+such as sepal length, sepal width, petal length and petal width?}
+
+Ved å sammenligne retningen og størrelsen på vektoren i skåreplottet, kan man finne mønstre og likheter i variablene.
+
+\bigskip
+
+\textit{Question 6 Are the directions of the loading vectors defined by the data? Argue for your answer!}
+
+Retningene til vektorene er definert av dataene, ettersom de beregnes på mønstrene og relasjonene i dataene.
+
+\bigskip
+
+\textit{Question 7 How does the score plot change if the direction of the loading vector is changed?}
+
+Hvis retningen til vektoren endres, vil skåreplottet også endres, datapunktene vil bli plottet i en annen retning.
+
+\bigskip
+
+\textit{Question 8 What does it mean that loading vectors can have negative values and positive values?}
+
+Vektorene kan ha negative verdier og positive verdier, dette forteller om variabelen er positivt eller negativt korrelert med hovedkomponenten.
+
+\bigskip
+
+\textit{Question 9 How do we arrange a multivariate data set in a data table (matrix)?}
+
+Et multivariat datasett kan ordnes i en datatabell eller matrise, der rader representerer observasjoner og kolonner representerer variabler.
+
+\bigskip
+
+\textit{Question 10 Score plots are scatter plots for latent variables in PCA. Why is it more efficient to consider scatter plots of latent variables than studying scatter plots from the original variables?}
+
+Å studere spredningsplott av latente variabler fra PCA er mer effektivt fordi det reduserer antall variabler som må analyseres og gjør det lettere å tolke sammenhengene i dataene.
+
+
+\end{document}
