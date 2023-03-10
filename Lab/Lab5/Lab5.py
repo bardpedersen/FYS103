@@ -19,27 +19,28 @@ max_L = 4 * L * np.sqrt(0.1 * (delta_T0 / T0))  # The maximum pendulum swing to 
 print('Max svingning = ', max_L)
 
 # Since n = 19, the number of swings in one time measurement is 20.
+i = 20
 T0n = []
-for _ in range(20):  # Measurement nr. 1
-    T0n.append(63.18 / 20)
-for _ in range(20):  # Measurement nr. 2
-    T0n.append(61.56 / 20)
-for _ in range(20):  # Measurement nr. 3
-    T0n.append(61.56 / 20)
-for _ in range(20):  # Measurement nr. 4
-    T0n.append(62.62 / 20)
-for _ in range(20):  # Measurement nr. 5
-    T0n.append(61.58 / 20)
-for _ in range(20):  # Measurement nr. 6
-    T0n.append(61.64 / 20)
-for _ in range(20):  # Measurement nr. 7
-    T0n.append(61.98 / 20)
-for _ in range(20):  # Measurement nr. 8
-    T0n.append(62.16 / 20)
-for _ in range(20):  # Measurement nr. 9
-    T0n.append(62.30 / 20)
-for _ in range(20):  # Measurement nr. 10
-    T0n.append(62.22 / 20)
+for _ in range(i):  # Measurement nr. 1
+    T0n.append(63.18 / i)
+for _ in range(i):  # Measurement nr. 2
+    T0n.append(61.56 / i)
+for _ in range(i):  # Measurement nr. 3
+    T0n.append(61.56 / i)
+for _ in range(i):  # Measurement nr. 4
+    T0n.append(62.62 / i)
+for _ in range(i):  # Measurement nr. 5
+    T0n.append(61.58 / i)
+for _ in range(i):  # Measurement nr. 6
+    T0n.append(61.64 / i)
+for _ in range(i):  # Measurement nr. 7
+    T0n.append(61.98 / i)
+for _ in range(i):  # Measurement nr. 8
+    T0n.append(62.16 / i)
+for _ in range(i):  # Measurement nr. 9
+    T0n.append(62.30 / i)
+for _ in range(i):  # Measurement nr. 10
+    T0n.append(62.22 / i)
 
 accuracy = 4 * 10 ** (-3)  # The manual wanted a certainty closer than 0.05% so this
 # accuracy is set to 0.04%
