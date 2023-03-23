@@ -1,0 +1,294 @@
+\documentclass[twocolumn, 11pt]{article} % MÅ defineres i ethvert dokument.
+\usepackage{longtable}
+
+\usepackage[utf8]{inputenc} %Tillater spesialteikn uten bruk av koding.
+\usepackage[norsk]{babel} % Tillater norske teikn.
+\usepackage[margin=1in]{geometry} % Definerer marger i dokumentet.
+\usepackage{microtype} % Gjør det mer behagelig å lese dokumentet.
+\usepackage{amsmath} % Tillater avansert formatering av matte.
+\usepackage{amsfonts} % Tillater avanserte teikn, som R for reelle tall.
+\usepackage[toc,page]{appendix} 
+\usepackage{url}
+\usepackage{graphicx} % Tillater mer avansert formatering av grafikk.
+\usepackage{geometry} % Tillater enklere formatering av sidevisning.
+\usepackage[colorlinks=true, pdfborder={0 0 0}]{hyperref} % Tillater hyperlenker {\href} som under. Colorlinks kan byttes til false hvis man ønsker linker i svart.
+\usepackage[tableposition=top]{caption} % Tvinger tabelltekst til å dukke opp over alle tabeller.
+\usepackage{graphicx}
+\usepackage{float}
+\graphicspath{ {./images/} }
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=1,
+  literate={å}{{\aa}}1 {ø}{{\o}}1}
+
+%I enkelte laboratorieoppgaver kan det bli nødvendig å laste flere pakker. Ta internett (deriblant lenkene nedafor) til hjelp i søket etter rett pakke. Noen har sannsynligvis lurt på det samme som deg.
+\begin{document}
+
+\twocolumn[
+  \begin{@twocolumnfalse}
+\textbf{
+  \title{Bestemmelse av tyngdens akselerasjon}
+  \author{Bård Tollef Pedersen og Erik Lykke Trier}
+  \date{\today} % \today gir dagens dato
+  \maketitle
+} 
+\begin{abstract}
+\begin{large}
+\
+ Formålet med denne rapporten er å beregne tyngdens akselerasjon ved å måle en fysikalsk pendels lengde og svingetid. Før målingene ble gjennomført, ble det gjort beregninger for å sikre at den relative usikkerheten i resultatet var mindre enn $0,5\%$. Resultatet ble sammenlignet med den kjente verdien for \textit{g} på Ås, som er $9,818844 m/s^2$. Resultatet av målingen viste at tyngdens akselerasjon på Ås var $9.83 \pm 0.04 m/s^2$. Det gir en overensstemmelse med resultatet av målingen og den kjente verdien for tyngdens akselerasjon på Ås.
+    
+\end{large}
+\end{abstract}
+\end{@twocolumnfalse}]
+
+\section{Innledning} 
+Tyngdekraften er en av de mest grunnleggende kreftene i universet, og dens effekter kan observeres overalt i vår verden. Denne kraften har vært gjenstand for forskning i århundrer, og har vært et av hovedfokusene i fysikkforskning. En av de mest presise metodene for å måle tyngdekraften er ved bruk av en pendel. Pendelbevegelse kan brukes til å bestemme tyngdekraften i en gitt lokalitet ved å måle svingetiden og lengden på pendelen.
+Formålet med denne rapporten er å beskrive metodene og resultatene fra et eksperiment som ble utført for å bestemme tyngdekraften ved bruk av en fysikalsk pendel.
+\section{Teori og metoder}
+
+\subsection{Tyngdekraft}
+%Gravity is the only mutual attraction Erik is ever going to experience, it is also the very phenonoma that created the meningless life on earth that Erik experiences as pain.
+
+
+%Tyngdekraften er et viktig fenomen som har gjort livet på Jorda mulig. Det er en kraft som %definerer akselerasjonen mellom to objekter. Jordas tyngdekraft nær Jordas overflate, som dette %forsøket handler om, er kraften mellom Jorda og objektene i nærheten av Jordas overflate og den %måles som akselerasjonen objektene har når de er i fritt fall nærme Jordas over flate*. Grunnen %til at det spesifiseres til nærheten av Jordas overflate er at Tyngde kraften mellom to objekter %er direkte avhengig av massen til objektene og distansen mellom dem
+
+%*DETTE ER VELDIG GJENTAKENDE FINN EN BEDRE MÅTE Å SKRIVE DET PÅ!!*
+%Nytt forsøk:
+Teorien om tyngdekraften er en av de mest fundamentale og grunnleggende teoriene innenfor fysikk. Den beskriver hvordan alle objekter i universet påvirker hverandre med en kraft som kalles tyngdekraften.
+
+Tyngdekraften er en av de fire grunnleggende kreftene i naturen, og den er den kraften som holder alle objekter med masse sammen. Den beskrives av Newtons lov om universell gravitasjon, som sier at enhver masse i universet påvirker alle andre masser med en kraft som er proporsjonal med produktet av massene og omvendt proporsjonal med avstanden mellom dem og den kan uttrykkes slik:
+
+\begin{equation}
+    F = \frac{G*(m_1*m_2)}{r^2}
+    \label{universiell_tyngdekraft}
+\end{equation}
+
+Hvor \textit{F} er kraften mellom to masser, \textit{G} er gravitasjonskonstanten, \textit{$m_1$} og \textit{$m_2$} er massene til objektene, og \textit{r} er avstanden mellom objektene.
+
+Denne loven kan brukes til å forutsi bevegelsen til objekter i rommet, inkludert planeter, stjerner og galakser. Den kan også brukes til å forutsi effekten av gravitasjonskrefter på jordens overflate, inkludert tidevann og fritt fall. I dette forsøket brukes en pendel med en vekt på omtrent 200 gram og en høyde på et par meter over jordoverflaten. Da blir både massen og avstanden så liten andel av Jordas masse og radius at den er neglisjerbar. Det vil si at tyngdekraften mellom Jorda og gjenstander i nærheten av overflaten er tilnærmet konstant. \cite{Gravitasjon}
+
+
+\subsection{Pendel}
+En pendel er et objekt som henger fra en fast gjenstand og beveger seg frem og tilbake under påvirkning av tyngdekraften. En typisk pendel består av en streng og et objekt som henger fra den, for eksempel en kule. Når pendelen slippes, beveger kulen seg til den ene siden og stopper der, før den begynner å bevege seg tilbake. Denne bevegelsen frem og tilbake kalles pendelbevegelse.
+
+En pendel kan brukes til å beregne tyngdekraftens akselerasjon \textit{g} ved hjelp av formelen:
+\begin{equation}
+    g = \sqrt{\frac{4 \pi L}{T_0^2}}
+    \label{tyngdekraften}
+\end{equation}
+
+
+, hvor \textit{L} er lengden på pendelen og \textit{$T_0$} er tiden det tar for pendelen å fullføre en full sving frem og tilbake.
+
+For å bruke denne formelen, må lengden på pendelen og tiden det tar for pendelen å fullføre en full sving måles. Dette kan gjøres ved å la pendelen svinge frem og tilbake og bruke en stoppeklokke til å måle tiden det tar for pendelen å fullføre en full sving. Lengden på pendelen kan måles ved å måle avstanden fra midtpunktet av pendelens vippepunkt til midtpunktet av kulen.
+
+Med disse dataene går det an å bruke likning \eqref{tyngdekraften} til å gi et estimat på tyngdekraftens akselerasjon.
+
+Det er viktig å merke seg at denne formelen forutsetter at pendelen beveger seg i en jevnt og rettlinjet bevegelse uten luftmotstand eller andre ytre påvirkninger, en matematisk pendel. I virkeligheten er det små avvik fra denne ideelle situasjonen, men resultatene vil likevel være ganske nøyaktige.
+\cite{taylor1997error} \cite{Pendel}
+
+\subsection{Metode}
+I forsøket har det blitt brukt en fysikalsk pendel, disse er ofte unøyaktige og uforutsigbare. For å gjøre den fysikalske pendelen nærmere lik en matematisk pendel har det blitt gjort utregninger på forhånd av selve forsøket. Disse utregningene går ut på å få den relative usikkerheten til å bli mindre enn 0.5\%.
+
+For å minske den relative usikkerheten i svingetiden ble det først funnet en teoretisk korrekt svingetid som ble regnet ut med formelen:
+\begin{equation}
+    T_0 = 2\pi\sqrt{\frac{L}{g}}
+    \label{svingetid_pendel}
+\end{equation}
+, her er \textit{g} tyngdekraften på Ås gitt i oppgaveteksten \cite{oppgavetekst}.
+
+I dette tilfelle ble \textit{g} gitt som 9.818844 $m/s^2$. Ved hjelp av tyngdekraften og målt lengde fra sentrum i pendelets vekt senter til vippe punktet ble svingetiden gitt som 3.106 sekunder. \textit{n} ble regnet ut ved hjelp av standardavviket fra målingene som ble funnet ved å ta 10 individuelle målinger av svingningstiden og formelen:
+
+\begin{equation}
+    \left(2\frac{\delta T_0}{T_0}\right)^2 < \frac{1}{2} (5 \times 10^{-3})^2
+    \label{delta_T_0}
+\end{equation}
+, her er \textit{$\delta T_0$} usikkerhet til svingetiden.
+
+I tillegg til antall svingninger ble det estimert hvor langt ut svingningene skal starte fra likevekts-stillingen for at pendelen skal oppføre seg mer som en matematisk pendel. For å regne ut dette ble disse likningen brukt:
+
+\begin{equation}
+    \left(\frac{\delta L}{L}\right)^2 < \frac{1}{2} (5 \times 10^{-3})^2
+    \label{delta_L}
+\end{equation}
+, her er \textit{$\delta L$} usikkerhet til lengden. 
+
+\begin{equation}
+    \frac{\delta T_{x}}{T_0} < 0,1\frac{\delta T_0}{T_0}
+    \label{delta_T_x}
+\end{equation}
+, her er \textit{$\delta T_{x}$} er usikkerheten til svingetiden relativt til maksimalt utslag.
+
+\begin{equation}
+    \frac{\delta T_{x}}{T_0} = \left(\frac{x}{4L}\right)^2
+    \label{formula_x}
+\end{equation}
+, her er \textit{$x$} maksimalt utslag pendelen kan ha.
+
+Deretter ble det målt fem intervaller av \textit{n} målinger per intervall, ved hjelp av likning \eqref{tyngdekraften} ble tyngdekraften estimert.
+
+Sammen med estimatet på tyngdekraften ble det regnet ut en usikkerhet, som er kombinert av feilen i målingen av lengden på pendelen og feilen på målingen av tiden for pendelens svingetid. Usikkerheten i \textit{$T_0$} er gitt ved formelen:
+
+\begin{equation}
+    \delta T_0 =  \frac{\delta T_{0_n}}{n}
+    \label{formula_n}
+\end{equation}
+
+Der \textit{$\delta T_{0_n}$} er forskjell fra utregnet svingetid mot manuelt målt svingetid \textit{n} ganger og \textit{n} er da antall målinger.
+
+Likningen for feilen i \textit{g} er gitt ved:
+
+\begin{equation}
+    \frac{\delta g}{g} = \sqrt{\left(\frac{\delta L}{L}\right)^2 + \left(2\frac{\delta T_0}{T_0}\right)^2}
+    \label{delta_g}
+\end{equation}
+
+Der \textit{$\frac{\delta g}{g}$} er relative feilen i tyngdekraftens akselerasjon, \textit{$\frac{\delta L}{L}$} er den relative feilen i målingen av lengden av pendelen og \textit{$\frac{\delta T_0}{T_0}$} er den relative feilen i målingen av svingetiden, denne er multiplisert med to siden reaksjonstiden blir brukt to ganger i løpet av et intervall. 
+
+
+\section{Resultater}
+
+Tyngdekraften kan først beregnes etter maks utslaget og antall målinger er utregnet. Maks utslaget ble gjort med hjelp av formel \eqref{delta_L}, \eqref{delta_T_x} og \eqref{formula_x}. Dette gjorde at det maksimale utslaget ble utregnet til å være $0.12$ meter for at feilen kan neglisjeres grunnet endelige store utslag. 
+Med formel \eqref{delta_T_0} og \eqref{formula_n} ble antall målinger utregnet til å være mer enn 19.49 for at usikkerheten på $T_0$ skal være mindre enn $0.5\%$.
+
+Fra koden i vedlegg \ref{Python} og formlene \eqref{delta_T_0} og \eqref{delta_L} blir usikkerheten på lengden $\delta l = 0.0068 m$ og usikkerheten på tiden for gjennomsnittlige målingen $\delta T_0 = 0.0044 s$.
+
+Tyngdens akselerasjon ble utregnet ved hjelp av formel \eqref{svingetid_pendel} og \eqref{delta_g}, samt koden i vedlegg \ref{Python}. Dette ga en verdi på $9.83 \pm 0.04  m/s^2$. Ved hjelp av formel \eqref{delta_g} regnes den relative feilen til tyngdens akselerasjon til å bli $0.41\%$.
+
+\section{Diskusjon}
+
+  
+Resultatene viser at tyngdens akselerasjon er estimert til $9.83$ $\pm$ $0.04$ $m/s^2$, dette gir en relativ usikkerheten på $0,41\%$, som er mindre enn det forhåndsbestemte kravet på  $0,5\%$. Det betyr at målingen ble planlagt og utført på en tilstrekkelig nøyaktig måte.
+
+Når det gjelder selve resultatet, er det et lite avvik fra den kjente verdien for tyngdens akselerasjon på Ås. Resultatet er $0,012 m/s^2$ høyere enn den kjente verdien, men usikkerheten på $0.04 m/s^2$ betyr at verdien er innenfor usikkerhetsintervallet. 
+
+En av grunnende til avviket kan være luftmotstand. Dette bremser ned pendelen og det vil ikke være en perfekt matematisk pendel. Dette avviket vil være lite ettersom det ble regnet ut et maksimalt utslag for pendelen. Likevel kan dette avviket minskes videre ved å ha en pendel som er symmetrisk og aerodynamisk, for eksempel en kule. Det at pendelen ikke er symmetrisk om alle aksene kan også føre til et avvik. En matematisk pendel er i to dimensjoner, og kan bare svinge fram og tilbake. Hvis pendelen ikke er symmetrisk er det fort at luftmotstanden bremser ulikt på pendelvekten og den vil begynne å rotere om sin egen akse. Dette kan igjen gjøre til at pendelen ikke svinger i en perfekt linje, men heller i en oval form. Dette vil føre til avvik som kunne blitt ungått ved å ha en symmetrisk pendel vekt.
+
+Den største feilkilden er reaksjonstid. Mennesker har en reaksjonstid som vil gjøre dette resultatet mer unøyaktig. Dette avvik skal også være lite ettersom gjennomsnittstiden av periodene ble målt og ikke hver enkelt periode.
+Fra resultatet er det 19 perioder som skal til for at denne usikkerheten blir liten nok til å kunne neglisjeres. Dette ble rundet opp og det ble brukt gjennomsnittet til 20 perioder. Dette vil gjøre at reaksjonstiden som feilkilde blir drastisk redusert. Hadde det blitt brukt enda fler perioder for å finne gjennomsnittstiden kunne en ny usikkerhet dukket opp. Feilkilde fra demping og luftmotstand i pendelen. 
+
+For å unngå demping og luftmotstand ble det brukt gjennomsnittet for 20 perioder for så å gjenta dette 10 ganger. Da vil usikkerheten fra demping og luftmotstand minske, samtidig som usikkerheten fra reaksjonstiden holdes lav. I tillegg var det samme person som tok alle tidene for å unngå usikkerheten i at mennesker har forskjellige reaksjonstid.
+
+Målingen av tauet kunne vært mer nøyaktig. Tauet ble målt ved hjelp av en meterstokk, som er skalert for å kunne måle ned til millimeteren. Siden lengden på pendel tauet er ca. 2.4 meter måtte meterstokken flyttes to ganger for å kunne måle hele lengden. Selv om det ble prøvd å flytte meterstokken så forsiktig som mulig og merke av hvor forrige meter stoppet, vil det være usikkerhet herfra også.
+
+Manuelt løfte pendelen til maks utsalg hver gang vil også føre til mer usikkerhet. Dette er fordi den ikke vil bli plassert på nøyaktig samme sted for hver gang. Dette gjør at pendelen kan ha blitt løftet høyre enn det maks utslaget skal være. Dette kan fikses ved å lage en liten mekanisme. Denne mekanismen kan fungere ved å legge pendelen på en flate som er på riktig utslag, for så å fjerne flaten og sende pendelen av gårde i svingningen sin.
+
+Målet var å få den teoretiske feilen til å bidra med mindre enn 10\% av den samlede feilen i svingetiden. Dette er fordi den da vil være tilstrekkelig liten og den kan sees bort ifra. Med andre ord, det kan antas at pendelen vil oppføre seg som en matematisk pendel, som er en ideell modell som ikke tar hensyn til fysiske motstandskrefter.
+
+
+Python koden kan også være en usikkerhet. Her kan det være skrivefeil eller at formlene er lagt inn feil. Koden som er brukt kan sees i vedlegg \ref{Python}. Rådata kan sees i vedlegg \ref{RådataVedlegg}.
+
+\section{Konklusjon}
+
+Resultatene viser at tyngdens akselerasjon er estimert til $9.83$ $\pm$ $0.04$ $m/s^2$, som er i tråd med den kjente verdien for tyngdens akselerasjon på Ås. Selv om det er en grad av usikkerhet, er estimatet innenfor den relative usikkerheten som ble stilt som krav i oppgaven hvor eventuelle avvik kan skyldes tilfeldig feil eller usikkerhet.
+
+\bibliographystyle{plain}
+\bibliography{sources5.bib}
+\clearpage
+\onecolumn
+\newpage
+\appendix
+\section{Vedlegg A}
+\label{Python}
+
+\begin{lstlisting}
+import numpy as np
+
+L = 2.4  # Length of rope in m
+T0 = 3.2  # Time from lab manual to calculate number of fluctuations
+T0n = [3.12, 3.18, 3.07, 3.31, 3.10, 3.12, 2.97, 3.22, 3.21, 3.15]  # Time of 10 measurements
+# to calculate standard error
+
+# Calculate standard error for time measurement
+mean = sum(T0n) / len(T0n)
+variance = sum([((x - mean) ** 2) for x in T0n]) / len(T0n)
+delta_T0n = variance ** 0.5
+
+delta_T0 = (np.sqrt(1 / 2) * (4 * 10 ** (-3))) / 2 * T0
+
+n = delta_T0n / delta_T0  # Number of measurements to get low uncertainty.
+print('Antall målinger: ', round(n))
+
+max_L = 4 * L * np.sqrt(0.1 * (delta_T0 / T0))  # The maximum pendulum swing to get low uncertainty.
+print('Maks svingning = ', max_L)
+
+# Since n = 19, the number of swings in one time measurement is 20.
+T0n = []
+for _ in range(20):  # Measurement nr. 1
+    T0n.append(63.18 / 20)
+for _ in range(20):  # Measurement nr. 2
+    T0n.append(61.56 / 20)
+for _ in range(20):  # Measurement nr. 3
+    T0n.append(61.56 / 20)
+for _ in range(20):  # Measurement nr. 4
+    T0n.append(62.62 / 20)
+for _ in range(20):  # Measurement nr. 5
+    T0n.append(61.58 / 20)
+for _ in range(20):  # Measurement nr. 6
+    T0n.append(61.64 / 20)
+for _ in range(20):  # Measurement nr. 7
+    T0n.append(61.98 / 20)
+for _ in range(20):  # Measurement nr. 8
+    T0n.append(62.16 / 20)
+for _ in range(20):  # Measurement nr. 9
+    T0n.append(62.30 / 20)
+for _ in range(20):  # Measurement nr. 10
+    T0n.append(62.22 / 20)
+
+accuracy = 4 * 10 ** (-3)  # The manual wanted a certainty closer than 0.5% so this
+# accuracy is set to 0.4%
+
+# Formulas are retrieved from the lab manual. Here the uncertainty is calculated.
+T0 = (sum(T0n) / len(T0n))
+delta_T0 = (np.sqrt(1 / 2) * accuracy) / 2 * T0
+delta_L = (np.sqrt(1 / 2) * accuracy) * L
+print('Usikkerhet L :', delta_L, 'Usikkerhet T0n :', delta_T0n, 'Usikkerhet T0 :', delta_T0)
+
+# Formulas are retrieved from the lab manual. Here the gravity and its uncertainty is calculated.
+g = (4 * (np.pi ** 2) * L) / (T0 ** 2)
+delta_g = g * np.sqrt((delta_L / L) ** 2 + (2 * delta_T0 / T0) ** 2)
+print('Tyngdekraften =', g, '+-', delta_g)
+print('Nøyaktighet :', delta_g / g)
+
+\end{lstlisting}
+
+\clearpage
+\newpage
+\section{Vedlegg B}
+\label{RådataVedlegg}
+
+\begin{longtable}{l}
+
+63.18
+61.56
+61.56
+62.62
+61.58
+61.64
+61.98
+62.16
+62.30
+62.22
+      
+\end{longtable}
+
+\end{document}
+
+
