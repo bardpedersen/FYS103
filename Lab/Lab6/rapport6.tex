@@ -1,0 +1,353 @@
+\documentclass[twocolumn, a4paper, 11pt]{article} % MÅ defineres i ethvert dokument.
+\usepackage{longtable}
+\usepackage[utf8]{inputenc} %Tillater spesialteikn uten bruk av koding.
+\usepackage[norsk]{babel} % Tillater norske teikn.
+\usepackage[margin=1in]{geometry} % Definerer marger i dokumentet.
+\usepackage{microtype} % Gjør det mer behagelig å lese dokumentet.
+\usepackage{amsmath} % Tillater avansert formatering av matte.
+\usepackage{amsfonts} % Tillater avanserte teikn, som R for reelle tall.
+\usepackage[toc,page]{appendix} 
+\usepackage{url}
+\usepackage{graphicx} % Tillater mer avansert formatering av grafikk.
+\usepackage{geometry} % Tillater enklere formatering av sidevisning.
+\usepackage[colorlinks=true, pdfborder={0 0 0}]{hyperref} % Tillater hyperlenker {\href} som under. Colorlinks kan byttes til false hvis man ønsker linker i svart.
+\usepackage[tableposition=top]{caption} % Tvinger tabelltekst til å dukke opp over alle tabeller.
+\usepackage{graphicx}
+\usepackage{float}
+\graphicspath{ {./images/} }
+\usepackage{listings}
+\usepackage{color}
+\usepackage{siunitx}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\begin{document}
+
+\twocolumn[
+  \begin{@twocolumnfalse}
+\textbf{
+  \title{Estimering av resistans med analogt voltmeter og amperemeter}
+  \author{Bård Tollef Pedersen og Erik Lykke Trier}
+  \date{\today} % \today gir dagens dato
+  \maketitle
+} 
+
+\begin{abstract}
+\begin{large}
+I dette forsøket beregnes verdien til to forskjellige motstander ved hjelp av et analogt voltmeter, et analogt amperemeter og et multimeter. Motstanden skal kobles i et koblingsbrett i kretser med amperemeteret, voltmeteret og en spenningskilde bestående av to 1.5 volts batterier i serie. Hensikten med dette forsøket er å sjekke hvor presist man kan måle en motstand ved hjelp av et analogt voltmeter og et analogt amperemeter i krets med motstandene og en spenningskilde. Resultatene stemmer godt overens med teori, og målte verdier.
+
+\end{large}
+\end{abstract} 
+\end{@twocolumnfalse}
+]
+
+\section{Innledning} 
+Elektrisitet kan være både fascinerende og farlig, og nøyaktige målinger er en viktig faktor for å unngå farer og feil. Når det gjelder å måle motstand, er det to verktøy som ofte brukes: amperemeter og voltmeter. Det er dette denne rapporten omhandler. Det skal brukes et analogt voltmeter, et analogt amperemeter og et digitalt multimeter for å måle strøm og spenningsfall i kretser som er koblet på et koblingsbrett. Videre vil rapporten se nærmere på hvordan feilforplanting kan påvirke måleresultatene, og hvordan det kan korrigeres for indre motstand i instrumentene. I tillegg skal det undersøkes usikkerheten til målingene og resultatene skal sammenlignes fra de ulike måleinstrumentene for å evaluere hvor nøyaktig motstand kan måles ved hjelp av analogt voltmeter og analogt amperemeter.
+
+
+\section{Teori og metoder}
+
+\subsection{Ohms lov og resistans}
+Georg Simon Ohm publiserte et papir om forholdet mellom spenning, strøm og resistans. Han fant ut at det finnes et lineært forhold mellom de tre verdiene som beskrives av Ohms lov. Han beskrev forholdet mellom de tre verdiene som
+
+\begin{equation}
+     V = R I ,
+    \label{ohms lov}
+\end{equation}
+
+hvor \textit{V} er spenningen, \textit{I} er strømmen og \textit{R} er motstanden \cite{Ohms_lov}.
+
+\bigskip 
+
+
+Resistans eller motstand er en grunnleggende elektrisk egenskap som beskriver en komponent eller et materiale som reduserer spenningen gjennom en elektrisk krets. Motstand måles i ohm \textit{$\si{\ohm}$}, og verdien av motstanden avhenger av materialet og geometrien til den elektriske komponenten.
+
+For å måle motstanden til en komponent, kan man bruke et multimeter, et instrument som kan måle flere elektriske egenskaper, inkludert motstand. Multimeteret måler motstanden ved å lage en spenningsforskjell over de to probene som motstanden er koblet til og deretter måle strømmen som går gjennom motsanden. Ved hjelp av denne informasjonen regner multimeteret ut motstandens verdi med Ohms lov \eqref{ohms lov}. I denne målingen er det også en gitt usikkerhet som man finner i manualen til multimeteret. 
+
+En annen måte å beregne motstandens resistans er ved å gjøre det samme som multimeteret gjør bare manuelt. Ved hjelp av en spenningskilde, amperemeter og voltmeter får man de samme variablene som multimeteret og kan da også regne ut resistansen med Ohms lov \eqref{ohms lov} \cite{Elektrisk_strøm}.
+
+For å måle strømmen gjennom en komponent, må man koble et amperemeter i serie med den. Amperemeteret vil da måle strømmen i ampere (A). For å måle spenningen over en komponent, kan man koble et voltmeter parallelt med den. Voltmeteret vil måle spenningen i volt (V) \cite{oppgavetekst}.
+
+
+\subsection{Metode}
+
+For å beregne resistansen i resistoren, ble det brukt to forskjellige kretser, begge kretsene kan sees i figur \ref{krets}. Dette er for å se om det blir en forskjell i beregnet resistans når det måles spenningsfall over kun resistoren i forhold til når det måles spenningsfallet over både resistoren og amperemeteret.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{Lab6/Screenshot 2023-03-29 at 16.02.28}
+\caption{Koblingsskjema av kretsene som ble brukt i denne rapporten. Der krets 1 måler spenningsfallet over kun resistoren og krets 2 måler spenningsfallet over både resistoren og amperemeteret. Hentet fra \cite{oppgavetekst}.}
+\label{krets}
+\end{figure}
+
+
+I begge kretsene ble det brukt en spenningskilde bestående av to 1.5 volts batterier, et analogt amperemeter og et analogt voltmeter. I første kretsen kobles batteriene i serie i det tilrettelagte koblingsbrettet, fra spenningskilden  kobles amperemeteret i serie med en motstand og over motstanden kobles voltmeteret i parallell med motstanden.
+
+I den andre kretsen kobles det nesten likt, men her er voltmeteret koblet i paralell med resistoren og amperemeteret. Slik som vist i figur \ref{krets}.
+
+Når strømmen ble målt gjennom amperemeteret skulle utsalget være så nærme maksutslaget som mulig, ettersom usikkerheten på amperemeteret og
+voltmeteret er 0.5\% av maksutlsaget. Det ble derfor brukt 6 mA inngangen for 680 $\si{\ohm}$ motstanden og 12 mA inngangen for 330 $\si{\ohm}$ motstanden. På voltmeteret var volten konstant og det ble derfor brukt med 3V inngangen for begge motstandene.
+
+I tillegg ble den indre resistansen i det analoge voltmeteret og amperemeteret målt. Dette ble gjort med multimeteret over de samme koblingene som ble brukt i målingene av strømmen og spenningen. Så det ble målt motstand over 6 mA og 12 mA inngangen på amperemeteret og 3V inngangen på voltmeteret. Det ble også målt motstand på de to motstandene for å sammenligne verdiene med de teoretiske og de beregnede verdiene fra kretsene. I tillegg ble det målt volt fra spenningskilden med multimeteret. Dette for å sikkre mindre unøyaktighet.
+
+
+
+\subsection{Formler}
+
+For å beregne den ukorrigerte motstanden, brukes Ohms lov \eqref{ohms lov}. For å beregne usikkerheten til denne ikke korrigerte motstanden brukes Gauss’ feilforplantningslov sammen med Ohms lov \eqref{ohms lov}. Gauss’ feilforplantningslov sier at usikkerheten i en funksjon av flere variabler kan beregnes ved å summere bidragene fra hver enkelt variabel i henhold til følgende formel, og skrives som 
+
+\begin{equation}
+\resizebox{1.0\hsize}{!}{$
+\delta f = \sqrt{{\left(\frac{\partial f}{\partial x_1} \delta x_1\right)}^2 + {\left(\frac{\partial f}{\partial x_2} \delta x_2 \right)}^2 + .... +{\left(\frac{\partial f}{\partial x_n} {\delta x_n} \right)}^2}
+$},
+\label{usikkerhet_f}
+\end{equation}
+
+hvor $\delta f$ er den totale usikkerheten, $\delta x_i$ er usikkerheten i variabel $x_i$, og $\frac{\partial f}{\partial x_i}$ er den partielle deriverte av funksjonen $f$ med hensyn til variabelen $x_i$ \cite{taylor1997error}.
+
+Formelen for usikkerheten til den ikke korrigerte motstanden blir da
+
+\begin{equation}
+    \frac{\delta R_{ukorr}}{R_{ukorr}} = \sqrt{\left(\frac{\delta V}{V}\right)^2 + \left(\frac{\delta I}{I}\right)^2},
+    \label{formel_krets1og2_delta_R_ukorr}
+\end{equation}
+
+hvor $R_{ukorr}$ er den ukorrigerte motstanden, $\delta R_{ukorr}$ er usikkerheten til den ukorrigerte motstanden, $V$ er volt, $\delta V$ er usikkerheten til volt, $I$ er strøm og $\delta I$ er usikkerheten til strømen.
+
+\bigskip
+
+For  å beregne de korrigerte verdiene for motstanden i krets 1 brukes Ohms lov \eqref{ohms lov} hvor strømmen gjennom voltmeteret er tatt høyde for, dette gir formelen
+
+\begin{equation}
+    R = \frac{V}{I - \frac{V}{R_V}}.
+    \label{formel_krets1_R_korr}
+\end{equation}
+
+Her er $R_V$ motstanden gjennom voltmeteret. For å beregne usikkerheten til denne korrigerte motstanden i krets 1 brukes formelen
+
+\begin{equation}
+\resizebox{1.0\hsize}{!}{$
+    \frac{\delta R}{R} = \frac{1}{1- \frac{R_{ukorr}}{R_V}}
+    \sqrt{\left(\frac{\delta V}{V}\right)^2 + \left(\frac{\delta I}{I}\right)^2 + \left(\frac{\delta R_V}{R_V}\right)^2 \left(\frac{R_{ukorr}}{R_V}\right)^2}$
+    },
+    \label{formel_krets1_delta_R_korr}
+\end{equation}
+
+hvor $\delta R$ er usikkerheten til den korrigerte motstanden, og $\delta R_V$ er usikkerheten til motstanden gjennom voltmeteret. For å beregne korrigert motstanden i den andre kretsen brukes formelen
+
+\begin{equation}
+\resizebox{1.0\hsize}{!}{$
+    R = \frac{V - R_\alpha I}{I} = \frac{V}{I} - R_\alpha = R_{ukorr} - R_\alpha,
+    \label{formel_krets2_R_korr}
+    $}
+\end{equation}
+
+her er $R_\alpha$ den indre motstanden i amperemeteret. 
+
+\bigskip
+
+For å regne ut usikkerheten til korrigert verdi i krets 2, må det tas høyde for usikkerhet i hver led og komponent. Denne formelen kan utledes ved å bruke Gauss’ feilforplantningslov for usikkerhet. Denne formelen sammen med formelen for motstand i ligning \eqref{formel_krets2_R_korr} gir da en formel for å finne usikkerheten i motstanden. Denne formelen blir
+
+\begin{equation}
+\resizebox{1.0\hsize}{!}{$
+\delta R = \sqrt{{\left(\frac{\partial R}{\partial V}  \delta V \right)}^2 + {\left(\frac{\partial R}{\partial I} \delta I\right)}^2+ {\left(\frac{\partial R}{\partial R_\alpha} \delta R_\alpha \right)}^2}
+$}.
+\label{usikkerhet_R}
+\end{equation}
+
+Videre kan en finne de partielle deriverte ved å differensiere ligning \eqref{formel_krets2_R_korr} med hensyn til hver variabel, som gir 
+
+\begin{equation}
+    \frac{\partial R}{\partial V}= \frac{1}{I}
+    \label{partialderiverte_V_2},
+\end{equation}
+
+\begin{equation}
+    \frac{\partial R}{\partial I}= -\frac{V -R_\alpha I}{I^2}= -\frac{R}{I}
+    \label{partialderiverte_I}
+\end{equation}
+
+og
+
+\begin{equation}
+    \frac{\partial R}{\partial R_\alpha}= -1
+    \label{partialderiverte_R_alpha}.
+  \end{equation}
+
+
+Settes disse inn i den deriverte i formelen for usikkerhet, blir formelen
+
+
+\begin{equation}
+\resizebox{1.0\hsize}{!}{$
+    \partial R = \sqrt{{\left(\frac{\partial V}{I}\right)}^2 + {\left(-\frac{R}{I} \partial I\right)}^2 + {\left(-\partial R_\alpha \right)}^2}
+    $}.
+    \label{partialderiverte_satt_inn}
+\end{equation}
+
+
+Denne kan skrives om til den ønskede formen ved å multiplisere med $R_{2,ukorr}$ på begge sider, som da blir
+
+
+\begin{equation}
+\resizebox{1.0\hsize}{!}{$
+    \partial R R_{2,ukorr} = R_{2,ukorr} \sqrt{{\left(\frac{\partial V}{I}\right)}^2 + {\left(-\frac{R}{I} \partial I\right)}^2 + {\left(-\partial R_\alpha \right)}^2}
+    $},
+\label{Formula_R_2_ukorr}
+\end{equation}
+
+for så å dele på $R_{2,ukorr}$ på høyre side og kvadratrot leddet på venstre side. Som gir den endelige formelen for usikkerheten til korrigert verdi i krets 2, 
+
+
+\begin{equation}
+\resizebox{1.0\hsize}{!}{$
+    \partial R = R_{2,ukorr} \sqrt{{\left(\frac{\partial V}{V}\right)}^2 + {\left(\frac{\partial I}{I}\right)}^2 + {\left(\frac{\partial R_\alpha}{R_{2,ukorr}} \right)}^2}
+    $}
+\label{formel_krets2_delta_R_korr}
+\end{equation}
+
+\cite{oppgavetekst}.
+\section{Resultater}
+
+Ved hjelp av multimeteret ble den indre motstanden i samtlige aperater samt den faktiske volten fra spenningskilden målt, disse verdiene kan sees i tabell \ref{tabell_måling_multi}. Usikkerheten er beregnet fra nøyaktigheten til multimeteret som er hentet fra instrumentmanualen. 
+
+%Instrumentmanualen er oppgir usikkerheten for DC amper  til 1.0 \% + 3, DC volt til 0.15\% + 2 og $\si{\ohm}$ til 0.9\% + 2.a
+
+\begin{table}[H]
+\centering
+\caption{Teoretiske verdier mot målte verdier fra multimeteret}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|l|l|l|ll}
+\cline{1-3}
+Komponent  &   Oppgitt verdi   & Målt verdi & &  \\ \cline{1-3}
+Motstand 1  &   330$\si{\ohm}$   & 329.3$\pm$3.2  $\si{\ohm}$ & & \\ \cline{1-3}
+Motstand 2  &   680$\si{\ohm}$    & 678.0$\pm$6.3  $\si{\ohm}$ & &  \\ \cline{1-3}
+Ampermeter 6 $mA$  &   32 $\si{\ohm}$   &  31.7$\pm$0.5 $\si{\ohm}$ & & \\ \cline{1-3}
+Ampermeter 12 $mA$  &   16$\si{\ohm}$   & 16.2$\pm$0.3 $\si{\ohm}$  & &  \\ \cline{1-3}
+Voltmeter  &   3000$\si{\ohm}$   &  3001$\pm$27 $\si{\ohm}$& &\\ \cline{1-3}
+Batteri  &   3.0 V   & 2.96$\pm0.20$ V & &  \\ \cline{1-3}
+
+\end{tabular}%
+}
+\label{tabell_måling_multi}
+\end{table}
+
+
+\subsection{Krets 1}
+
+Målte verdier fra krets 1, kan sees i tabell \ref{tabell_mål_krets1}. Her er volt målt med et analogt voltmeter og amper målt med et analogt ampermeter.
+
+\begin{table}[H]
+\centering
+\caption{Krets 1.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|l|l|l|ll}
+\cline{1-3}
+Motstand ($\si{\ohm}$) &   Strøm ($mA$)  & Spenning ($V$) & &  \\ \cline{1-3}
+329.3$\pm$3.2 &  9.4$\pm$0.06  &  2.8$\pm$0.015  & & \\ \cline{1-3}
+678.0$\pm$6.3 &   5.05$\pm$0.03  & 2.8$\pm$0.015  & &  \\ \cline{1-3}
+
+\end{tabular} %
+}
+\label{tabell_mål_krets1}
+\end{table}
+
+I tabell \ref{beregning_motstand1} er beregnede verdier for de forskjellige motstandene fra krets 1. Her er formel \eqref{ohms lov} brukt for å beregne ukorrigert verdi, \eqref{formel_krets1og2_delta_R_ukorr} brukt for å beregne usikkerheten til  ukorrigert verdi. For å beregne korrigert verdi er formel \eqref{formel_krets1_R_korr} benyttet, og \eqref{formel_krets1_delta_R_korr} benyttet for korrigert usikkerhet.
+
+\begin{table}[H]
+\centering
+\caption{Krets 1 motstand beregning.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|l|l|l|ll}
+\cline{1-3}
+Motstand ($\si{\ohm}$) &   Ukorrigert verdi ($\si{\ohm}$)   & Korrigert verdi ($\si{\ohm}$) & &  \\ \cline{1-3}
+329.3$\pm$3.2 & 297.87$\pm$2.48 &  330.696$\pm$3.007  & & \\ \cline{1-3}
+678.0$\pm$6.3 &  554.45$\pm$4.43  &  680.111$\pm$6.16 & &  \\ \cline{1-3}
+
+\end{tabular}%
+}
+\label{beregning_motstand1}
+\end{table}
+
+\subsection{Krets 2}
+
+Målte verdier fra krets 2, kan sees i tabell \ref{tabell_mål_krets2}. Her er volt målt med et analogt voltmeter og amper målt med et analogt ampermeter.
+
+\begin{table}[H]
+\centering
+\caption{Krets 2.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|l|l|l|ll}
+\cline{1-3}
+Motstand ($\si{\ohm}$)  &   Strøm ($mA$)   & Spenning ($V$) & &  \\ \cline{1-3}
+329.3$\pm$3.2 &  8.5$\pm$0.06  &  2.95$\pm$0.015  & & \\ \cline{1-3}
+678.0$\pm$6.3 &   4.15$\pm$0.03   & 2.95$\pm$0.015  & &  \\ \cline{1-3}
+
+\end{tabular}%
+}
+\label{tabell_mål_krets2}
+\end{table}
+
+
+I tabell \ref{beregning_motstand2} er beregnede verdier for de forskjellige motstandene fra krets 2. Her er formel \eqref{Formula_R_2_ukorr} brukt for å beregne ukorrigert verdi, \eqref{formel_krets1og2_delta_R_ukorr} brukt for å beregne usikkerheten til  ukorrigert verdi. For å beregne korrigert verdi er formel \eqref{formel_krets2_R_korr} benyttet, og \eqref{formel_krets2_delta_R_korr} benyttet for korrigert usikkerhet.
+
+
+\begin{table}[H]
+\centering
+\caption{Krets 2 motstand beregning.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|l|l|l|ll}
+\cline{1-3}
+Motstand ($\si{\ohm}$)  &   Ukorrigert verdi ($\si{\ohm}$)   & Korrigert verdi ($\si{\ohm}$) & &  \\ \cline{1-3}
+329.3$\pm$3.2 & 347.059$\pm$3.019 &  330.859$\pm$3.060  & & \\ \cline{1-3}
+678.0$\pm$6.3 &  710.843$\pm$6.283   &   679.143$\pm$6.289  & &  \\ \cline{1-3}
+
+\end{tabular}%
+}
+\label{beregning_motstand2}
+\end{table}
+
+
+
+\section{Diskusjon}
+
+\subsection{Feilkilder}
+I denne øvelsen kan det oppstå flere feilkilder som kan påvirke måleresultatene. 
+En av de største feilkildene er feil i måleinstrumentene som brukes. Hvert måleinstrument har en feilmargin. For å minimere denne feilen bør man sørge for at måleinstrumentene kalibreres regelmessig. Usikkerheten på amperemeteret og voltmeteret er 0.5\% av maksutlsaget. For at denne verdien skal være så lav som mulig ble det valgt forskjellige innganger på amperemeteret. Dette gjør at verdien er så nærme maksutslaget som mulig uten å gå over og usikkerheten blir så lav som mulig. Går verdien over maksutslaget vil en lese av feil verdi.
+
+En annen feilkilde som kan påvirke måleresultatene, er usikkerhet i koblingene. Hvis kretsene ikke er koblet riktig eller hvis det oppstår løse forbindelser, kan dette føre til feil i målingene. Derfor er det viktig å sørge for at alle koblingene er sikre og pålitelige før man starter målingene. Denne feilen ble minimert ved å unngå fler ledninger og koblingspunkter enn det som behøves.
+
+En annen faktor som kan påvirke måleresultatene er indre motstand i instrumentene og ledningene. Dette kan føre til at målingene avviker fra de faktiske verdiene. Indre motstand i instrumentene ble tatt i betraktning hvor et multimeter ble brukt for å måle indre motstand i amperemeteret og voltmeteret som ble benyttet i utregningen av motstandene. 
+
+Feilforplantning kan også være en stor feilkilde. Det vil si at små feil i målingene kan forsterkes og føre til større feil i de endelige resultatene. For å minimerer dette ble det brukt Gauss’ feilforplantningslov for å beregne usikkerheten til motstandene. 
+
+Avlesning av analoge aperater kan også være en feilkilde. Hvis nålen ikke leses av rett ovenifra vil avlest verdi være for høy eller for lav i forhold til faktisk verdi. Dette er med på å gi en unøyaktighet som påvirker det endelige resultatet.
+
+Regne feil kan også gi unøyaktighet. I de lange formlene er det fort gjort å gjøre en beregningsfeil, dette vil føre til direkte feil og dermed usikkerhet i resultatet. Denne feilkilden, samt feil avlesning er med på å øke usikkerheten til feilforplantning. 
+
+
+\subsection{Krets 1}
+
+Fra tabell \ref{tabell_mål_krets1} kan en se at den korrigerte verdien er innenfor den målte verdien med usikkerheten, mens den ukorrigerte verdien ikke er innenfor. Dette er fordi det vil være et spennings fall over amperemeteret som ikke blir målt. Dette spenningsfallet vil gi et lavere spenningsfall over motstanden som vil gi feil resistans når en beregner motstanden ved hjelp av Ohms lov \eqref{ohms lov}. Det at den korrigerte verdien er innenfor den målte verdien et bra tegn og bekrefter at usikkerheten og feilforplantingen er holdt lav. Fra denne tabellen \ref{tabell_mål_krets1} kan en også se at korrigert verdi er 0.4\% unna på resistoren med 330$\si{\ohm}$ og 0.3\% unna på resistoren med 680$\si{\ohm}$.
+
+
+\subsection{Krets 2}
+
+Fra tabell \ref{tabell_mål_krets2} kan en se at som i krets 1 er korrigert verdi ekstremt nære den målte verdien, mens den ukorrigerte verdien ikke er innenfor teorien med usikkerhetene. En grunn til at motstandens verdi er for høy på den ukorrigerte verdien er fordi voltmeteret nå måler spenningsfallet over motstanden og amperemeteret. Dette vil gjøre at verdien vil være en kombinasjon av resistoren og den indre motstanden i amperemeteret. Den korrigerte verdien tar høyde for dette med formel \eqref{formel_krets2_R_korr} og er derfor en bedre beregnet verdi for resistoren. Som i krets 1 er det her også bra at den korrigerte verdien er nærme den teoretiske. Dette vil igjen bety at usikkerheten og feilforplanting ble holdt lav. Fra tabellen \ref{tabell_mål_krets2} kan en også se at korrigert verdi er 0.5\% unna på resistoren med 330$\si{\ohm}$ og 0.2\% unna på resistoren med 680$\si{\ohm}$.
+
+
+\section{Konklusjon}
+Fra krets 1 er det en differanse fra målt verdi og beregnet korrigert verdi på 0.4\% på resistoren med 330$\si{\ohm}$ og 0.3\% på resistoren med 680$\si{\ohm}$. Fra krets 2 er det en differanse fra målt verdi og beregnet korrigert verdi på 0.5\% på resistoren med 330$\si{\ohm}$ og 0.2\% på resistoren med 680$\si{\ohm}$.
+
+Dette er gode resultater og disse små avvikene gir bevis for et vellykket forsøket hvor usikkerheten og feilkilder er holdt lave. 
+
+
+Resultatet stemmer godt overens med de teoretiske verdi og det kan konkluderes med at det er mulig å bestemme resistansensens verdi utfra målinger gjort med et analogt ampermeter og voltmeter.
+
+
+\bibliographystyle{plain}
+\bibliography{sources6.bib}
+
+\end{document}
+
