@@ -35,21 +35,23 @@
 
 \begin{abstract}
 \begin{large}
-I dette forsøket beregnes verdien til to forskjellige motstander ved hjelp av et analogt voltmeter, et analogt amperemeter og et multimeter. Motstanden skal kobles i et koblingsbrett i kretser med amperemeteret, voltmeteret og en spenningskilde bestående av to 1.5 volts batterier i serie. Hensikten med dette forsøket er å sjekke hvor presist man kan måle en motstand ved hjelp av et analogt voltmeter og et analogt amperemeter i krets med motstandene og en spenningskilde. Resultatene stemmer godt overens med teori, og målte verdier.
-
+I dette forsøket beregnes verdien til to forskjellige motstander ved hjelp av et analogt voltmeter, et analogt amperemeter og et multimeter. Motstanden skal kobles i et koblingsbrett i kretser med amperemeteret, voltmeteret og en spenningskilde bestående av to 1.5 volts batterier i serie. Hensikten med dette forsøket er å sjekke hvor presist man kan måle en motstand ved hjelp av et analogt voltmeter og et analogt amperemeter i krets med motstandene og en spenningskilde. Det må også korrigeres for den indre motstanden i voltmeteret og amperemeteret. For krets 1 ble korrigert verdi 0.4$\%$ unna den oppgitte verdien på resistoren med 330$\si{\ohm}$ og 0.3$\%$ unna på resistoren med 680$\si{\ohm}$. For krets 2 ble korrigert verdi 0.5$\%$ unna den oppgitte verdien på resistoren med 330$\si{\ohm}$ og 0.2$\%$ unna på resistoren med 680$\si{\ohm}$.
 \end{large}
 \end{abstract} 
 \end{@twocolumnfalse}
 ]
 
-\section{Innledning} 
+\section{Innledning}
+
 Elektrisitet kan være både fascinerende og farlig, og nøyaktige målinger er en viktig faktor for å unngå farer og feil. Når det gjelder å måle motstand, er det to verktøy som ofte brukes: amperemeter og voltmeter. Det er dette denne rapporten omhandler. Det skal brukes et analogt voltmeter, et analogt amperemeter og et digitalt multimeter for å måle strøm og spenningsfall i kretser som er koblet på et koblingsbrett. Videre vil rapporten se nærmere på hvordan feilforplanting kan påvirke måleresultatene, og hvordan det kan korrigeres for indre motstand i instrumentene. I tillegg skal det undersøkes usikkerheten til målingene og resultatene skal sammenlignes fra de ulike måleinstrumentene for å evaluere hvor nøyaktig motstand kan måles ved hjelp av analogt voltmeter og analogt amperemeter.
+
+
 
 
 \section{Teori og metoder}
 
 \subsection{Ohms lov og resistans}
-Georg Simon Ohm publiserte et papir om forholdet mellom spenning, strøm og resistans. Han fant ut at det finnes et lineært forhold mellom de tre verdiene som beskrives av Ohms lov. Han beskrev forholdet mellom de tre verdiene som
+Georg Simon Ohm fant ut at det er et forhold mellom spenning, strøm og resistans som beskrives av Ohms lov. Han beskrev forholdet mellom de tre verdiene som
 
 \begin{equation}
      V = R I ,
@@ -113,7 +115,9 @@ Formelen for usikkerheten til den ikke korrigerte motstanden blir da
     \label{formel_krets1og2_delta_R_ukorr}
 \end{equation}
 
-hvor $R_{ukorr}$ er den ukorrigerte motstanden, $\delta R_{ukorr}$ er usikkerheten til den ukorrigerte motstanden, $V$ er volt, $\delta V$ er usikkerheten til volt, $I$ er strøm og $\delta I$ er usikkerheten til strømen.
+hvor $R_{ukorr}$ er den ukorrigerte motstanden, $\delta R_{ukorr}$ er usikkerheten til den ukorrigerte motstanden, $\delta V$ er usikkerheten til spenningen og $\delta I$ er usikkerheten til strømen.
+
+%Trenger ikke si hva V og I er fra ohms lov.
 
 \bigskip
 
@@ -226,7 +230,7 @@ Motstand 2  &   680$\si{\ohm}$    & 678.0$\pm$6.3  $\si{\ohm}$ & &  \\ \cline{1-
 Ampermeter 6 $mA$  &   32 $\si{\ohm}$   &  31.7$\pm$0.5 $\si{\ohm}$ & & \\ \cline{1-3}
 Ampermeter 12 $mA$  &   16$\si{\ohm}$   & 16.2$\pm$0.3 $\si{\ohm}$  & &  \\ \cline{1-3}
 Voltmeter  &   3000$\si{\ohm}$   &  3001$\pm$27 $\si{\ohm}$& &\\ \cline{1-3}
-Batteri  &   3.0 V   & 2.96$\pm0.20$ V & &  \\ \cline{1-3}
+Batteri  &   3.0 V   & 2.9$\pm0.2$ V & &  \\ \cline{1-3}
 
 \end{tabular}%
 }
@@ -236,7 +240,7 @@ Batteri  &   3.0 V   & 2.96$\pm0.20$ V & &  \\ \cline{1-3}
 
 \subsection{Krets 1}
 
-Målte verdier fra krets 1, kan sees i tabell \ref{tabell_mål_krets1}. Her er volt målt med et analogt voltmeter og amper målt med et analogt ampermeter.
+Målte verdier fra krets 1, kan sees i tabell \ref{tabell_mål_krets1}. Her er spenningen målt med et analogt voltmeter og amper målt med et analogt ampermeter.
 
 \begin{table}[H]
 \centering
@@ -245,8 +249,8 @@ Målte verdier fra krets 1, kan sees i tabell \ref{tabell_mål_krets1}. Her er v
 \begin{tabular}{|l|l|l|ll}
 \cline{1-3}
 Motstand ($\si{\ohm}$) &   Strøm ($mA$)  & Spenning ($V$) & &  \\ \cline{1-3}
-329.3$\pm$3.2 &  9.4$\pm$0.06  &  2.8$\pm$0.015  & & \\ \cline{1-3}
-678.0$\pm$6.3 &   5.05$\pm$0.03  & 2.8$\pm$0.015  & &  \\ \cline{1-3}
+329.3$\pm$3.2 &  9.4$\pm$0.1  &  2.8$\pm$0.0  & & \\ \cline{1-3}
+678.0$\pm$6.3 &   5.1$\pm$0.0  & 2.8$\pm$0.0  & &  \\ \cline{1-3}
 
 \end{tabular} %
 }
@@ -262,8 +266,8 @@ I tabell \ref{beregning_motstand1} er beregnede verdier for de forskjellige mots
 \begin{tabular}{|l|l|l|ll}
 \cline{1-3}
 Motstand ($\si{\ohm}$) &   Ukorrigert verdi ($\si{\ohm}$)   & Korrigert verdi ($\si{\ohm}$) & &  \\ \cline{1-3}
-329.3$\pm$3.2 & 297.87$\pm$2.48 &  330.696$\pm$3.007  & & \\ \cline{1-3}
-678.0$\pm$6.3 &  554.45$\pm$4.43  &  680.111$\pm$6.16 & &  \\ \cline{1-3}
+329.3$\pm$3.2 & 297.9$\pm$2.5 &  330.7$\pm$3.0  & & \\ \cline{1-3}
+678.0$\pm$6.3 &  554.5$\pm$4.4  &  680.1$\pm$6.2 & &  \\ \cline{1-3}
 
 \end{tabular}%
 }
@@ -272,7 +276,7 @@ Motstand ($\si{\ohm}$) &   Ukorrigert verdi ($\si{\ohm}$)   & Korrigert verdi ($
 
 \subsection{Krets 2}
 
-Målte verdier fra krets 2, kan sees i tabell \ref{tabell_mål_krets2}. Her er volt målt med et analogt voltmeter og amper målt med et analogt ampermeter.
+Målte verdier fra krets 2, kan sees i tabell \ref{tabell_mål_krets2}. Her er spenningen målt med et analogt voltmeter og amper målt med et analogt ampermeter.
 
 \begin{table}[H]
 \centering
@@ -281,8 +285,8 @@ Målte verdier fra krets 2, kan sees i tabell \ref{tabell_mål_krets2}. Her er v
 \begin{tabular}{|l|l|l|ll}
 \cline{1-3}
 Motstand ($\si{\ohm}$)  &   Strøm ($mA$)   & Spenning ($V$) & &  \\ \cline{1-3}
-329.3$\pm$3.2 &  8.5$\pm$0.06  &  2.95$\pm$0.015  & & \\ \cline{1-3}
-678.0$\pm$6.3 &   4.15$\pm$0.03   & 2.95$\pm$0.015  & &  \\ \cline{1-3}
+329.3$\pm$3.2 &  8.5$\pm$0.1  &  3.0$\pm$0.0  & & \\ \cline{1-3}
+678.0$\pm$6.3 &   4.2$\pm$0.0   & 3.0$\pm$0.0  & &  \\ \cline{1-3}
 
 \end{tabular}%
 }
@@ -300,8 +304,8 @@ I tabell \ref{beregning_motstand2} er beregnede verdier for de forskjellige mots
 \begin{tabular}{|l|l|l|ll}
 \cline{1-3}
 Motstand ($\si{\ohm}$)  &   Ukorrigert verdi ($\si{\ohm}$)   & Korrigert verdi ($\si{\ohm}$) & &  \\ \cline{1-3}
-329.3$\pm$3.2 & 347.059$\pm$3.019 &  330.859$\pm$3.060  & & \\ \cline{1-3}
-678.0$\pm$6.3 &  710.843$\pm$6.283   &   679.143$\pm$6.289  & &  \\ \cline{1-3}
+329.3$\pm$3.2 & 347.1$\pm$3.0 &  330.9$\pm$3.1  & & \\ \cline{1-3}
+678.0$\pm$6.3 &  710.8$\pm$6.3   &   679.1$\pm$6.3  & &  \\ \cline{1-3}
 
 \end{tabular}%
 }
